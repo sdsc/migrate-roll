@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="no"?>
+
+<kickstart>
+
+
+	<description>
+	The migrate Roll - http://popgen.sc.fsu.edu/Migrate/Migrate-n.html
+	</description>
+
+	<copyright>
+	Copyright (c) 2000 - 2014 The Regents of the University of California.
+	All rights reserved. Rocks(r) v6.1.1 www.rocksclusters.org
+	</copyright>
+
+	<package>migrate</package>
+	<package>migrate-modules</package>
+	<package>migrate-roll-test</package>
+
+
+</kickstart>
