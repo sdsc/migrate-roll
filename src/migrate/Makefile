@@ -80,7 +80,7 @@ DESCRIPTION:
 
 LICENSE: $(SRC_DIRS)
 	$(CHECK_LICENSE_FILES)
-	echo README > $@
+	echo CUSTOM > $@
 
 build: $(SRC_DIRS)
 	( \
