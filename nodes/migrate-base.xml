@@ -12,9 +12,9 @@
 	All rights reserved. Rocks(r) v6.1.1 www.rocksclusters.org
 	</copyright>
 
-	<package>migrate</package>
-	<package>migrate-modules</package>
-	<package>migrate-roll-test</package>
+	<package>sdsc-migrate</package>
+	<package>sdsc-migrate-modules</package>
+	<package>sdsc-migrate-roll-test</package>
 
 
 </kickstart>
