@@ -6,7 +6,7 @@ This roll bundles... migrate
 
 For more information about the various packages included in the migrate roll please visit their official web pages:
 
-- <a href="http://popgen.sc.fsu.edu/Migrate/Migrate-n.html" target="_blank"></a> is .
+- <a href="http://popgen.sc.fsu.edu/Migrate/Migrate-n.html" target="_blank">migrate</a> estimates effective population sizes and past migration rates between n population assuming a migration matrix model with asymmetric migration rates and different subpopulation sizes
 
 
 ## Requirements

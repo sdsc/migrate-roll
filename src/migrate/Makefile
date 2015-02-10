@@ -80,7 +80,7 @@ DESCRIPTION:
 
 LICENSE: $(SRC_DIRS)
 	$(CHECK_LICENSE_FILES)
-	echo GPL > $@
+	echo README > $@
 
 build: $(SRC_DIRS)
 	( \
