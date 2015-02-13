@@ -92,7 +92,7 @@ build: $(SRC_DIRS)
           cd ..; \
           export CC=mpicc; \
           export CXX=mpicxx; \
-          ./configure --prefix=$(PKGROOT); \
+          ./configure --prefix=$(ROOT)/$(PKGROOT); \
 	)
 	@echo "::: Package $(NAME) build complete :::"
 	

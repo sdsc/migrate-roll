@@ -5,7 +5,7 @@ COMPILERNAME := $(firstword $(subst /, ,$(ROLLCOMPILER)))
 
 NAME           = sdsc-migrate
 VERSION        = 3.6.6
-RELEASE        = 1
+RELEASE        = 2
 PKGROOT        = /opt/migrate
 
 SRC_SUBDIR     = migrate
