@@ -86,10 +86,10 @@ build: $(SRC_DIRS)
 	( \
 	  $(MODULE_LOAD_CC); \
 	  $(MODULE_LOAD_MPI); \
-          export CFLAGS=$(AVX_FLAG); \
 	  cd $(SOURCE_DIR)/src/zlib; \
 	  ./configure; \
           cd ..; \
+          export CFLAGS=$(AVX_FLAG); \
           export CC=mpicc; \
           export CXX=mpicxx; \
           ./configure --prefix=$(ROOT)/$(PKGROOT); \
