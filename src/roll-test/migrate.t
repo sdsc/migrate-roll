@@ -25,7 +25,7 @@ SKIP: {
 
   `mkdir $TESTFILE.dir`;
   $output = `module load ROLLCOMPILER; module load ROLLMPI; module load migrate;cd $TESTFILE.dir;cp /opt/migrate/example/parmfile* .;cp /opt/migrate/example/infile.msat .;mpirun -np 5 /opt/migrate/bin/migrate-n-mpi parmfile.testbayes -nomenu 2>&1`;
-  like($output, qr/Theta_1                0.92485             10103.73/, 'migrate runs');
+  like($output, qr/Theta_1                0.91735             11415.41/, 'migrate runs');
   `/bin/ls /opt/modulefiles/applications/migrate/[0-9]* 2>&1`;
   ok($? == 0, 'migrate module installed');
   `/bin/ls /opt/modulefiles/applications/migrate/.version.[0-9]* 2>&1`;
