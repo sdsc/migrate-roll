@@ -63,13 +63,11 @@ include $(SDSCDEVEL)/Rules.mk
 
 $(NAME).spec: DESCRIPTION LICENSE
 
-CFLAGS = -DNEXUSTREE -DHAVE_ZLIB -DZNZ -DHIGHBITS -DHAVE_CONFIG_H -DHAVE_MALLOCWRAP -DMERSENNE_TWISTER -DMEXP=19937
+CFLAGS = -O3
 ifeq ("$(COMPILERNAME)", "intel")
- CFLAGS += -xHOST
+ CFLAGS = -xHOST
 else ifeq ("$(COMPILERNAME)", "pgi")
- CFLAGS += -fast
-else ifeq ("$(COMPILERNAME)", "gnu")
- CFLAGS += -O3
+ CFLAGS = -fast
 endif
 
 
