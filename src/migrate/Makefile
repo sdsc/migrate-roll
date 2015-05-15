@@ -90,7 +90,7 @@ build: $(SRC_DIRS)
 	  $(MODULE_LOAD_CC); \
 	  $(MODULE_LOAD_MPI); \
 	  cd $(SOURCE_DIR)/src/zlib; \
-          export CFLAGS=$(CFLAGS); \
+          export CFLAGS="$(CFLAGS)"; \
 	  ./configure; \
           cd ..; \
           export CC=mpicc; \
@@ -104,7 +104,7 @@ install::
 	( \
 	  $(MODULE_LOAD_CC); \
 	  $(MODULE_LOAD_MPI); \
-          export CFLAGS=$(AVX_FLAG); \
+          export CFLAGS="$(CFLAGS)"; \
           export CC=mpicc; \
           export CXX=mpicxx; \
 	  cd $(SOURCE_DIR)/src; \
