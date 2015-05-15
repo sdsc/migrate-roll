@@ -63,12 +63,15 @@ include $(SDSCDEVEL)/Rules.mk
 
 $(NAME).spec: DESCRIPTION LICENSE
 
-AVX_FLAG=
-ifneq ("$(ROLLOPTS)", "$(subst avx2,,$(ROLLOPTS))")
-      AVX_FLAG = -xcore-avx2
-else ifneq ("$(ROLLOPTS)", "$(subst avx,,$(ROLLOPTS))")
-      AVX_FLAG = -xavx
+CFLAGS = -DNEXUSTREE -DHAVE_ZLIB -DZNZ -DHIGHBITS -DHAVE_CONFIG_H -DHAVE_MALLOCWRAP -DMERSENNE_TWISTER -DMEXP=19937
+ifeq ("$(COMPILERNAME)", "intel")
+ CFLAGS += -xHOST
+else ifeq ("$(COMPILERNAME)", "pgi")
+ CFLAGS += -fast
+else ifeq ("$(COMPILERNAME)", "gnu")
+ CFLAGS += -O3
 endif
+
 
 DESCRIPTION:
 	$(MODULE_LOAD_CC); \
@@ -87,9 +90,9 @@ build: $(SRC_DIRS)
 	  $(MODULE_LOAD_CC); \
 	  $(MODULE_LOAD_MPI); \
 	  cd $(SOURCE_DIR)/src/zlib; \
+          export CFLAGS=$(CFLAGS); \
 	  ./configure; \
           cd ..; \
-          export CFLAGS=$(AVX_FLAG); \
           export CC=mpicc; \
           export CXX=mpicxx; \
           ./configure --prefix=$(ROOT)/$(PKGROOT); \
