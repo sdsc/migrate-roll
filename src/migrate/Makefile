@@ -84,7 +84,6 @@ LICENSE: $(SRC_DIRS)
 	echo CUSTOM > $@
 
 build: $(SRC_DIRS)
-	patch $(SOURCE_DIR)/src/main.c patch-files/main.c.patch
 	( \
 	  $(MODULE_LOAD_CC); \
 	  $(MODULE_LOAD_MPI); \
