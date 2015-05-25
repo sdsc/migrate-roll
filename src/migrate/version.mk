@@ -4,7 +4,7 @@ endif
 COMPILERNAME := $(firstword $(subst /, ,$(ROLLCOMPILER)))
 
 NAME           = sdsc-migrate
-VERSION        = 3.6.8
+VERSION        = 3.6.10
 RELEASE        = 0
 PKGROOT        = /opt/migrate
 
