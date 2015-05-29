@@ -13,6 +13,7 @@
 	</copyright>
 
 	<package>sdsc-migrate</package>
+	<package>sdsc-migrate-3.6.8</package>
 	<package>sdsc-migrate-modules</package>
 	<package>sdsc-migrate-roll-test</package>
 
