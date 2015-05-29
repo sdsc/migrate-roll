@@ -11,7 +11,7 @@ my $appliance = $#ARGV >= 0 ? $ARGV[0] :
 my $installedOnAppliancesPattern = '.';
 my $isInstalled = -d '/opt/migrate';
 my $output;
-my @VERSIONS = ("3.6.8","3.6.10");
+my @TYPES = ("3.6.8","3.6.10");
 
 
 my $TESTFILE = 'tmpmigrate';
@@ -25,7 +25,7 @@ SKIP: {
 
   skip 'migrate not installed', 4 if ! $isInstalled;
 
-  foreach my $VERS(@VERSIONS)  {
+  foreach my $VERS(@TYPES)  {
      `mkdir $TESTFILE.dir`;
      $output = `module load ROLLCOMPILER; module load ROLLMPI; module load migrate/$VERS;cd $TESTFILE.dir;cp /opt/migrate/$VERS/example/parmfile* .;cp /opt/migrate/$VERS/example/infile.msat .;mpirun -np 5 migrate-n-mpi parmfile.testbayes -nomenu 2>&1`;
      like($output, qr/1             -12825.04/, 'migrate $VERS runs');
