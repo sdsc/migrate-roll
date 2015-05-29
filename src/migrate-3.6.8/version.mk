@@ -3,9 +3,9 @@ ifndef ROLLCOMPILER
 endif
 COMPILERNAME := $(firstword $(subst /, ,$(ROLLCOMPILER)))
 
-NAME           = sdsc-migrate
+NAME           = sdsc-migrate-3.6.8
 VERSION        = 3.6.8
-RELEASE        = 2
+RELEASE        = 3
 PKGROOT        = /opt/migrate/$(VERSION)
 
 SRC_SUBDIR     = migrate
