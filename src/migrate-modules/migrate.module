@@ -66,4 +66,4 @@ module-whatis "Description: migrate"
 module-whatis "Compiler: ROLLCOMPILER"
 module-whatis "Compiler: ROLLMPI"
 setenv MIGRATEHOME /opt/migrate/VERSION
-prepend-path PATH /opt/migrate/bin
+prepend-path PATH /opt/migrate/VERSION/bin
