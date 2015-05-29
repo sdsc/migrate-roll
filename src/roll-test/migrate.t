@@ -28,7 +28,7 @@ SKIP: {
   foreach my $VERS(@TYPES)  {
      `mkdir $TESTFILE.dir`;
      $output = `module load ROLLCOMPILER; module load ROLLMPI; module load migrate/${VERS};cd $TESTFILE.dir;cp /opt/migrate/${VERS}/example/parmfile* .;cp /opt/migrate/${VERS}/example/infile.msat .;mpirun -np 5 migrate-n-mpi parmfile.testbayes -nomenu 2>&1`;
-     like($output, qr/1             -12825.04/, 'migrate $VERS runs');
+     like($output, qr/1             -12825.04/, "migrate $VERS runs");
      `rm -rf  $TESTFILE.dir`;
   }
   `/bin/ls /opt/modulefiles/applications/migrate/[0-9]* 2>&1`;
