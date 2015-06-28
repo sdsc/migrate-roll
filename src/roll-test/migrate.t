@@ -11,7 +11,7 @@ my $appliance = $#ARGV >= 0 ? $ARGV[0] :
 my $installedOnAppliancesPattern = '.';
 my $isInstalled = -d '/opt/migrate';
 my $output;
-my @TYPES = ("3.6.8","3.6.10");
+my @TYPES = ("3.6.8","3.6.11");
 
 
 my $TESTFILE = 'tmpmigrate';
