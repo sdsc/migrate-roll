@@ -75,7 +75,7 @@ DESCRIPTION:
 	$(MODULE_LOAD_CC); \
 	( \
 	  $(DESCRIBE_PKG); \
-	  $(DESCRIBE_CC) \
+	  $(DESCRIBE_CC); \
 	  $(DESCRIBE_MPI) \
 	) > $@
 
@@ -106,10 +106,10 @@ install::
           export CC=mpicc; \
           export CXX=mpicxx; \
 	  cd $(SOURCE_DIR)/src; \
-	  $(MAKE) mpis; \
+	  $(MAKE) STDCPLUS=-lstdc++ mpis; \
           $(MAKE) install; \
           $(MAKE) clean; \
-          $(MAKE); \
+          $(MAKE) STDCPLUS=-lstdc++; \
           $(MAKE) install; \
           cd ..; \
           cp -r example $(ROOT)/$(PKGROOT) \
