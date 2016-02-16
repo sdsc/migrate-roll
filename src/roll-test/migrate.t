@@ -26,10 +26,13 @@ SKIP: {
   skip 'migrate not installed', 4 if ! $isInstalled;
 
   foreach my $VERS(@TYPES)  {
-     `mkdir $TESTFILE.dir`;
-     $output = `module load ROLLCOMPILER; module load ROLLMPI; module load migrate/${VERS};cd $TESTFILE.dir;cp /opt/migrate/${VERS}/example/parmfile* .;cp /opt/migrate/${VERS}/example/infile.msat .;mpirun -np 5 migrate-n-mpi parmfile.testbayes -nomenu 2>&1`;
-     like($output, qr/1             -12825.04/, "migrate $VERS runs");
-     `rm -rf  $TESTFILE.dir`;
+    `mkdir $TESTFILE.dir; cp /opt/migrate/${VERS}/example/parmfile* /opt/migrate/${VERS}/example/infile.msat $TESTFILE.dir/`;
+    $output = `cd $TESTFILE.dir; module load migrate/${VERS}; mpirun -np 5 migrate-n-mpi parmfile.testbayes -nomenu 2>&1`;
+    if($output =~ /allow-run-as-root/) {
+      $output = `cd $TESTFILE.dir; module load migrate/${VERS}; mpirun --allow-run-as-root -np 5 migrate-n-mpi parmfile.testbayes -nomenu 2>&1`;
+    }
+    like($output, qr/1             -12825.04/, "migrate $VERS runs");
+    `rm -fr $TESTFILE.dir`;
   }
   `/bin/ls /opt/modulefiles/applications/migrate/[0-9]* 2>&1`;
   ok($? == 0, 'migrate module installed');
