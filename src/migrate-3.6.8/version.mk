@@ -3,9 +3,14 @@ ifndef ROLLCOMPILER
 endif
 COMPILERNAME := $(firstword $(subst /, ,$(ROLLCOMPILER)))
 
+ifndef ROLLMPI
+  ROLLMPI = rocks-openmpi
+endif
+MPINAME := $(firstword $(subst /, ,$(ROLLMPI)))
+
 NAME           = sdsc-migrate-3.6.8
 VERSION        = 3.6.8
-RELEASE        = 4
+RELEASE        = 5
 PKGROOT        = /opt/migrate/$(VERSION)
 
 SRC_SUBDIR     = migrate
